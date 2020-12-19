@@ -9,3 +9,6 @@ class medium_exercises(object):
 
 class hard_exercises(object):
     exercise = ["burpees", "push ups", "plank jacks", "bicycle crunch", "side planks"]
+
+class cooldown_exercises(object):
+    exercise = ["lunge", "jumping jacks", "squats"]
