@@ -3,5 +3,7 @@ The Home Workout Generator is a tool that generates exercises in a list that can
 
 ## Installation of the service
 In terminal, copy and paste the following commands: 
-> git clone https://github.com/your-username/Home-Workout-Generator
+```git clone https://github.com/your-username/Home-Workout-Generator```
+
+
 
