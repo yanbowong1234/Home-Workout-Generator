@@ -55,7 +55,7 @@ class Generator(object):
         Generator.section("Cooldown")
         Generator.print_exercises(self, cooldown_exercises)
 
-    def generate_hard(self):
+    def generate_difficult(self):
         Generator.title("Easy Workout")
         Generator.section("Warmup")
         Generator.print_exercises(self, warmup_exercises)
@@ -68,11 +68,19 @@ class Generator(object):
         Generator.section("Cooldown")
         Generator.print_exercises(self, cooldown_exercises)
 
+        def create_workout(self):
+            if difficulty == easy:
+                generator.generate_easy(self, 1)
+            elif difficulty == medium:
+                generator.generate_medium(self, 1)
+            elif difficult == difficult:
+                generator.generate_difficult(self, 1)
+
 class Engine(object):
     def start(self):
         self.get_difficulty()
         self.create_workout()
         log.close()
 
-self1 = self(), Generator()
-Engine.start(self1)
+gen1 = Generator()
+Engine.start(gen1)
