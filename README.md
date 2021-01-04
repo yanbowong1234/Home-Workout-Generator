@@ -33,7 +33,8 @@ Here is a link to the google slides: https://docs.google.com/presentation/d/12tO
 3. Add your exercise to the list included. 
 Eg: 
 **Original Code**
-```cooldown = [
+```
+cooldown = [
     "Squats",
     "Side Lunges",
     "Lunge",
@@ -46,14 +47,13 @@ Adding an Exercise Such as Pull Ups.
 Add "Pull up", into the code
 
 **After Adding it In:**
-```cooldown = [
+cooldown = [
     "Squats",
     "Side Lunges",
     "Lunge",
     "Calf Raise",
     "Walking Lunges",
-   ```diff
- - "Pull Up",
- ```
+    ```diff
+    - "Pull Up",
+    ```
 ]
-```
