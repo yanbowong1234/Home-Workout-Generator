@@ -1,86 +1,97 @@
-from random import sample
-from exercises import *
+import random
+import sys
 
-class Generator(object):
-    def get_difficulty(self):
-        difficulty = input("Which exercise difficulty would you like to do? (easy, medium, hard)\n>>> ")
-        while True:
-            if "easy" in difficulty:
-                self.sets = "1-3"
-                self.target_reps = "1-6"
-                break
-            elif "medium" in difficulty:
-                self.sets = "4-6"
-                self.target_reps = "7-13"
-                break
-            elif "difficult" in difficulty:
-                self.sets = "7-10"
-                self.target_reps = "13-19"
-                break
-            else:
-                print ("Please enter easy, medium, hard.")
-                difficulty = input("Which exercise difficulty would you like to do? (easy, medium, hard)\n>>> ")
-                difficulty = difficulty.lower()
-        return self.sets, self.target_reps
+warmups = [
+    "Jumping Jacks",
+    "Arm Circles",
+    "Walking Knee Hugs",
+    "Wrist Circles",
+    "Neck Rolls",
+]
 
-    def workout_title(self):
-        if difficulty == "easy":
-            print("Easy Workout")
-        elif difficulty == "medium":
-            print("Medium Workout")
-        elif difficulty == hard:
-            print("Hard Workout")
+easy_exercises = [
+    "Extended Leg Pulse",
+    "Sit-Ups",
+    "Lateral Leg Raise",
+    "Plank Taps",
+    "Step Up",
+    "Tuck Jump",
+    "Wall Sits",
+    "But Kicks",
+    "High Knees",
+    "Sprinting on the spot",
+]
 
-    def generate_easy(self):
-        Generator.title("Easy Workout")
-        Generator.section("Warmup")
-        Generator.print_exercises(self, warmup_exercises)
-        Generator.section("Workout")
-        Generator.print_exercises(self, easy_exercises)
-        Generator.print_exercises(self, easy_exercises)
-        Generator.print_exercises(self, easy_exercises)
-        Generator.section("Cooldown")
-        Generator.print_exercises(self, cooldown_exercises)
+medium_exercises = [
+    "Mountain climber",
+    "High Knees",
+    "Plank up",
+    "Shoulder Bridge",
+    "Superman",
+    "Plank Knee to Elbow",
+    "Prisoner Walkup",
+    "Push ups",
+    "Squat Thrusts",
+]
 
-    def generate_medium(self):
-        Generator.title("Easy Workout")
-        Generator.section("Warmup")
-        Generator.print_exercises(self, warmup_exercises)
-        Generator.print_exercises(self, warmup_exercises)
-        Generator.section("Workout")
-        Generator.print_exercises(self, easy_exercises)
-        Generator.print_exercises(self, medium_exercises)
-        Generator.print_exercises(self, medium_exercises)
-        Generator.print_exercises(self, medium_exercises)
-        Generator.section("Cooldown")
-        Generator.print_exercises(self, cooldown_exercises)
+difficult_exercises = [
+    "Burpees",
+    "Plank jacks",
+    "Bicycle Crunch",
+    "Side Planks",
+    "Russian Twist",
+    "Burpees with Push-Ups",
+    "Reverse Crunch",
+    "Crunch",
+    "Glute Bridge",
+]
 
-    def generate_difficult(self):
-        Generator.title("Easy Workout")
-        Generator.section("Warmup")
-        Generator.print_exercises(self, warmup_exercises)
-        Generator.section("Workout")
-        Generator.print_exercises(self, easy_exercises)
-        Generator.print_exercises(self, medium_exercises)
-        Generator.print_exercises(self, difficult_exercises)
-        Generator.print_exercises(self, difficult_exercises)
-        Generator.print_exercises(self, difficult_exercises)
-        Generator.section("Cooldown")
-        Generator.print_exercises(self, cooldown_exercises)
+cooldown = [
+    "Squats",
+    "Side Lunges",
+    "Lunge",
+    "Calf Raise",
+    "Walking Lunges",
+]
 
-        def create_workout(self):
-            if difficulty == easy:
-                generator.generate_easy(self, 1)
-            elif difficulty == medium:
-                generator.generate_medium(self, 1)
-            elif difficult == difficult:
-                generator.generate_difficult(self, 1)
+try:
+    diff = int(input("Input a difficulty: [1/2/3] "))
+except:
+    sys.exit("Invalid difficulty.")
 
-class Engine(object):
-    def start(self):
-        self.get_difficulty()
-        self.create_workout()
-        log.close()
+generated = []
 
-gen1 = Generator()
-Engine.start(gen1)
+number_of_warmups = 1
+number_of_exercises = 2
+number_of_cooldowns = 1
+
+exercises = easy_exercises
+
+if diff < 1 or diff > 3:
+    sys.exit("Invalid difficulty.")
+
+if diff >= 2:
+    number_of_warmups += 1
+    number_of_cooldowns += 1
+    number_of_exercises += 2
+    exercises += medium_exercises
+
+if diff == 3:
+    number_of_exercises += 2
+    exercises += difficult_exercises
+
+generated.append(random.sample(warmups, number_of_warmups))
+generated.append(random.sample(exercises, number_of_exercises))
+generated.append(random.sample(cooldown, number_of_cooldowns))
+
+
+print("Workout:")
+print("Warmup:")
+for i in generated[0]:
+    print(i)
+print("Exercises:")
+for i in generated[1]:
+    print(i)
+print("Cooldown:")
+for i in generated[2]:
+    print(i)
