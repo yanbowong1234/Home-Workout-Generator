@@ -52,6 +52,8 @@ Add "Pull up", into the code
     "Lunge",
     "Calf Raise",
     "Walking Lunges",
-    "Pull Up",
+   ```diff
+ - "Pull Up",
+ ```
 ]
 ```
