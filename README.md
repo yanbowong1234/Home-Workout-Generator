@@ -47,13 +47,13 @@ Adding an Exercise Such as Pull Ups.
 Add "Pull up", into the code
 
 **After Adding it In:**
+```
 cooldown = [
     "Squats",
     "Side Lunges",
     "Lunge",
     "Calf Raise",
     "Walking Lunges",
-    ```diff
-    - "Pull Up",
-    ```
+    "Pull Up",
 ]
+```
